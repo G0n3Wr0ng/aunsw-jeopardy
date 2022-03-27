@@ -1,16 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Pacifico&display=swap');
+body {
+    top: 0;
+    position: absolute;
+    margin: 0;
+    color: white;
+    font-size: 1.5em;
+    background-color: #2a2836;
+    font-family: 'Comfortaa', cursive;
+}
 
- body {
-   top:0;
-  position:absolute;
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  color:white;
-  font-size: 1.5em;
-  background-color: #2a2836;
- }
- #root {
-  top:0;
-  position:absolute;
- }
-  
-  
+#root {
+    top: 0;
+    position: absolute;
+}
