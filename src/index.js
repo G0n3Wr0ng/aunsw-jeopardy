@@ -589,7 +589,8 @@ function Page(props) {
   const factors = [1, 2];
   return (
     <PageWrap>
-      <H1> Aibou Arena </H1>{" "}
+      <H1> Aibou Arena </H1> 
+      <H2> Board: {currPage + 1} </H2>{" "}
       <MoneyGrid
         cats={cats.at(currPage)}
         qs={qs.at(currPage)}
@@ -605,7 +606,6 @@ function Page(props) {
           {" "}
           forward{" "}
         </NavButton>
-        page: {currPage}{" "}
       </NavButtonWrapper>{" "}
     </PageWrap>
   );
