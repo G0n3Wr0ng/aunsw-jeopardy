@@ -489,7 +489,7 @@ const BoxWrap = styled(Cell)`
     "#B361C0"} 50px */
 `;
 const CatWrap = styled(Cell)`
-  background-color: #ffb1e0ff;
+  background-color: #fe77c8;
   color: white;
   text-shadow: 2px 2px 5px #ca007aff;
   font-size: 1.5rem;
@@ -532,6 +532,8 @@ function Box(props) {
     </BoxWrap>
   );
 }
+
+
 const Table = styled.table`
   background-color: black;
   margin-left: auto;
@@ -580,31 +582,33 @@ const PageWrap = styled.div`
 const NavButtonWrapper = styled.div`
   position: absolute;
   align: center;
-  padding-right: 15px;
-  padding-top: 5px;
   bottom: 0;
-  background-color: #ab8dd8;
   z-index:50;
 `;
-const NavButton = styled(Button)`
-  height: 40px;
+
+const SponsorButtonWrapper = styled.div`
+  position: absolute;
   align: center;
-  padding: 15px;
-  display: inline-block;
+  padding-right: 15px;
+  padding-top: 5px;
+  bottom: 5px;
+  right: 5px;
+`;
+
+const NavButton = styled(Button)`
+  align: center;
+  display: inline;
+  padding: 5px 15px 0px 15px;
+  background-color: #ab8dd8;
   &:hover {
     background-color: #b06bc5;
   }
 `;
-const glow = keyframes`
-from {text-shadow: 0px 0px 10px #bd32d2, 0px 0px 20px #bd32d2;}
-to {text-shadow: 0px 0px 15px #bd32d2, 0px 0px 25px #bd32d2;}
-`
 const H1 = styled.div`
   font-size: 3rem;
   font-family: "Pacifico", cursive;
-  color:#ffffff;
   text-align: center;
-  animation: ${glow} 1s ease-in-out infinite alternate;
+  text-shadow: 2px 2px 5px #ffb1e0ff;
   padding: 5px;
 `;
 const H2 = styled.div`
@@ -654,7 +658,8 @@ function Page(props) {
   const setStates = [setState, setState2];
   return (
     <PageWrap>
-      <H1> Aibou Arena </H1>
+      <H1> Aibou Arena </H1> 
+      <H2> Board: {currPage + 1} </H2>{" "}
       <MoneyGrid
         cats={cats.at(currPage)}
         qs={qs.at(currPage)}
@@ -672,8 +677,8 @@ function Page(props) {
           
           forward
         </NavButton>
-        page: {currPage}
-      </NavButtonWrapper>
+      </NavButtonWrapper>{" "}
+      <SponsorButtonWrapper> This event was made possible due to Arc's Return to Campus grant</SponsorButtonWrapper>
     </PageWrap>
   );
 }
