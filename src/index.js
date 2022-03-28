@@ -150,36 +150,36 @@ const questionsArray = [
     { 
       q: "", 
       a: "What is the offical Pokemon Dub", 
-      i: "", 
-      ia: "" 
+      i: "Brock_question.jpg", 
+      ia: "Brock_answer.jpg.jpg" 
     },
 
     { 
       q: "", 
       a: "What is the Code Geass Fan dub", 
-      i: "", 
-      ia: "" 
+      i: "CodeGeass_question.jpg", 
+      ia: "CodeGeass_answer.jpg" 
     },
 
     { 
       q: "", 
       a: "What is the offical sub for Misfit at the Demon King Academy", 
-      i: "", 
-      ia: "" 
+      i: "MaouSama_question.jpg", 
+      ia: "MaouSama_Answer.jpg" 
     },
 
     { 
       q: "", 
       a: "What is the Fan translation for Jojo's Bizzare Adventure Part 4: Diamond is Ubreakable", 
-      i: "", 
-      ia: "" 
+      i: "duwaang_question.jpg", 
+      ia: "duwaang_answer.jpg" 
     },
     
     { 
       q: "", 
       a: "What is the Oficial Sub for Skull-face Bookseller Honda-san", 
-      i: "", 
-      ia: "" 
+      i: "HondaSan_question.jpg", 
+      ia: "HondaSan_answer.jpg" 
     },
   ],
 ];
@@ -293,36 +293,36 @@ const questionsArray2 = [
     { 
       q: " ", 
       a: "What is hypers", 
-      i: "", 
+      i: "hypers.png", 
       ia: "" 
     },
 
     { 
       q: "", 
       a: "What is feelsWeirdMan",
-      i: "", 
+      i: "feelsWeirdMan.png", 
       ia: "" 
     },
 
     { 
       q: "", 
       a: "WHat is coomerHands", 
-      i: "", 
+      i: "coomerhands.png", 
       ia: "" 
     },
 
     { 
       q: "", 
       a: "What is peepoHappy", 
-      i: "", 
-      ia: "" 
+      i: "peephappy.png", 
+      ia: "peepohappy_answer.jpg" 
     },
 
     { 
       q: "", 
       a: "What is based", 
-      i: "", 
-      ia: "" 
+      i: "based.png", 
+      ia: "based_answer.png" 
     },
   ],
   [
