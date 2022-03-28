@@ -506,6 +506,8 @@ function Box(props) {
     </BoxWrap>
   );
 }
+
+
 const Table = styled.table`
   background-color: black;
   margin-left: auto;
@@ -552,11 +554,22 @@ const PageWrap = styled.div`
 const NavButtonWrapper = styled.div`
   position: absolute;
   align: center;
-  padding-right: 15px;
+  padding-right: 15px;\
+  padding-left: 15px;
   padding-top: 5px;
   bottom: 0;
   background-color: #ab8dd8;
 `;
+
+const SponsorButtonWrapper = styled.div`
+  position: absolute;
+  align: center;
+  padding-right: 15px;
+  padding-top: 5px;
+  bottom: 5px;
+  right: 5px;
+`;
+
 const NavButton = styled(Button)`
   height: 40px;
   align: center;
@@ -607,6 +620,7 @@ function Page(props) {
           forward{" "}
         </NavButton>
       </NavButtonWrapper>{" "}
+      <SponsorButtonWrapper> This event was made possible due to Arc's Return to Campus grant</SponsorButtonWrapper>
     </PageWrap>
   );
 }
