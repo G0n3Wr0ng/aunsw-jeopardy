@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 const categoriesArray = ["Weeb", "Emotional Damage", "cat3", "cat4", "cat5"];
 const questionsArray = [
@@ -11,17 +11,16 @@ const questionsArray = [
       q: "The 3rd opening is Blue Bird by Ikimono Gakari",
       a: "What is a Naruto Shippuden Opening",
       i: "cute.jpg",
+      ia:"cute.jpg",
     },
     {
       q: "This anime series is based on the premise of summoning historical figures for a battle royale.",
       a: " What is Fate",
-      i: "",
-      ia: "",
     },
     {
       q: "The fifth isekai series to join Isekai Quartet",
       a: " What is The Rising of the Shield Hero/Tate no Yuusha no Nariagari",
-      i: "",
+      i: "rect.png",
       ia: "",
     },
     {
@@ -114,7 +113,6 @@ const ContentWrap = styled.div`
   right:15vw;
   padding:20px 50px;
   box-shadow: 20px 20px aqua;
-  glow:
   z-index:99;
 `;
 const Button = styled.div`
@@ -142,8 +140,7 @@ const ShowAnswer = styled(Button)`
   margin-right: auto;
 `;
 const Image = styled.img`
-  width: 400px;
-  height: 400px;
+  max-width:1400px;
 `;
 const GenericWrap = styled.div`
   text-align: center;
@@ -166,18 +163,23 @@ const Arrow = styled.div`
 function ShowQuestion(props) {
   return (
     <ContentWrap>
-      <ExitButton onClick={props.closeOnClick}> x </ExitButton>{" "}
-      <Header> {props.question.q} </Header> <br />{" "}
-      {props.question.i !== "" ? <Image src={props.question.i} alt="" /> : ""}{" "}
+      <ExitButton onClick={props.closeOnClick}> x </ExitButton>
+      <Header> {props.question.q} </Header>
+      {(props.question.i !== "" &&  props.question.i  !== undefined) ? <Image src={props.question.i} alt="" />: ""}
       <ShowAnswer onClick={props.SetAnswer}>
-        {" "}
+        
         <Arrow state={props.showanswer} />
         Answer
       </ShowAnswer>
       <GenericWrap>
-        {" "}
-        {props.showanswer ? props.question.a : ""}{" "}
-      </GenericWrap>{" "}
+        
+        {props.showanswer ? props.question.a : ""}
+        <br/>
+        { (props.showanswer && (props.question.i !== "" &&  props.question.i  !== undefined)) ? 
+          <Image src={props.question.ia} alt="" />:""}
+        {(props.showanswer && (props.question.i !== "" &&  props.question.i  !== undefined)) ? 
+          <audio src={props.question.m} type="audio/x-m4a" control autoplay />:""}
+      </GenericWrap>
     </ContentWrap>
   );
 }
@@ -215,12 +217,11 @@ const FullDiv = styled.div`
 `;
 
 function Box(props) {
-  const [state, setState] = useState(true);
   const [visible, setVisible] = useState(false);
   const [answer, SetAnswer] = useState(false);
   const [hover, SetHover] = useState(false);
   return (
-    <BoxWrap state={state} hover={hover}>
+    <BoxWrap state={props.state} hover={hover}>
       <FullDiv
         onClick={() => {
           setVisible(true);
@@ -228,16 +229,16 @@ function Box(props) {
         onMouseEnter={() => SetHover(true)}
         onMouseLeave={() => SetHover(false)}
       >
-        {" "}
-        {props.value}{" "}
-      </FullDiv>{" "}
+        
+        {props.value}
+      </FullDiv>
       {visible ? (
         <ShowQuestion
           question={props.question}
           visible={visible}
           closeOnClick={() => {
             setVisible(false);
-            setState(false);
+            props.setState(false);
           }}
           SetAnswer={() => SetAnswer(!answer)}
           showanswer={answer}
@@ -262,24 +263,26 @@ function MoneyGrid(props) {
   return (
     <Table>
       <tr>
-        {" "}
+        
         {props.cats.map((element, col) => (
           <CatWrap> {element} </CatWrap>
-        ))}{" "}
-      </tr>{" "}
+        ))}
+      </tr>
       {props.qs.map((row, rowIndex, mainArray) => (
         <tr>
-          {" "}
+          
           {row.map((element, colIndex) => (
             <Box
               value={`$${(rowIndex + 1) * 100 * props.factor}`}
               question={mainArray.at(colIndex).at(rowIndex)}
+              state = {props.state.at(colIndex).at(rowIndex)}
+              setState = {(val) => props.setState(colIndex,rowIndex,val)}
             >
-              {" "}
+              
             </Box>
-          ))}{" "}
+          ))}
         </tr>
-      ))}{" "}
+      ))}
     </Table>
   );
 }
@@ -308,11 +311,16 @@ const NavButton = styled(Button)`
     background-color: #b06bc5;
   }
 `;
+const glow = keyframes`
+from {text-shadow: 0px 0px 10px #bd32d2, 0px 0px 20px #bd32d2;}
+to {text-shadow: 0px 0px 15px #bd32d2, 0px 0px 25px #bd32d2;}
+`
 const H1 = styled.div`
   font-size: 3rem;
   font-family: "Pacifico", cursive;
+  color:#ffffff;
   text-align: center;
-  text-shadow: 2px 2px 5px #ffb1e0ff;
+  animation: ${glow} 1s ease-in-out infinite alternate;
   padding: 5px;
 `;
 const H2 = styled.div`
@@ -329,26 +337,59 @@ function Page(props) {
   const cats = [categoriesArray, categoriesArray2];
   const qs = [questionsArray, questionsArray2];
   const factors = [1, 2];
+  const array = questionsArray.map((row, rowIndex, mainArray) => {
+    return row.map((element, colIndex) => {
+      return true;
+    })
+  })
+  const array2 = questionsArray2.map((row, rowIndex, mainArray) => {
+    return row.map((element, colIndex) => {
+      return true;
+    })
+  })
+
+
+
+  const [state, setArray] = useState(array);
+  const [state2, setArray2] = useState(array2);
+  const setState = (col,row, val) => {
+    setArray(arr => Array.from(arr, (currRow,colIndex) => {
+      return Array.from(currRow, (e, rowIndex) => {
+        return ((colIndex === col && rowIndex === row) ? val : arr.at(colIndex).at(rowIndex))
+      })
+    }))
+  }
+  const setState2 = (col,row, val) => {
+    setArray2(arr => Array.from(arr, (currRow,colIndex) => {
+      return Array.from(currRow, (e, rowIndex) => {
+        return ((colIndex === col && rowIndex === row) ? val : arr.at(colIndex).at(rowIndex))
+      })
+    }))
+  }
+  const states = [state,state2];
+  const setStates = [setState, setState2];
   return (
     <PageWrap>
-      <H1> Aibou Arena </H1>{" "}
+      <H1> Aibou Arena </H1>
       <MoneyGrid
         cats={cats.at(currPage)}
         qs={qs.at(currPage)}
         factor={factors.at(currPage)}
-      />{" "}
+        state = {states.at(currPage)}
+        setState = {setStates.at(currPage)}
+      />
       <br />
       <NavButtonWrapper>
         <NavButton onClick={() => setPage(Math.max(currPage - 1, 0))}>
-          {" "}
-          previous{" "}
-        </NavButton>{" "}
-        <NavButton onClick={() => setPage(Math.min(currPage + 1, highestPage))}>
-          {" "}
-          forward{" "}
+          
+          previous
         </NavButton>
-        page: {currPage}{" "}
-      </NavButtonWrapper>{" "}
+        <NavButton onClick={() => setPage(Math.min(currPage + 1, highestPage))}>
+          
+          forward
+        </NavButton>
+        page: {currPage}
+      </NavButtonWrapper>
     </PageWrap>
   );
 }
