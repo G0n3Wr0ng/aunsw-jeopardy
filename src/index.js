@@ -204,50 +204,50 @@ const questionsArray2 = [
       ia: "",
     },
     {
-      q: "This anime is infamous for repeating the same episode with minor differences eight times in a row.",
-      a: "What is The Melancholy of Haruhi/Suzumiya Haruhi no Yuutsu?",
+      q: "The director behind the films Perfect Blue and Paprika.",
+      a: "Who is Satoshi Kon?",
       i: "",
       ia: "",
     },
     {
-      q: "Hayao Miyazaki's directorial debut.",
-      a: "What is Lupin III: The Castle of Cagliostro/Lupin III: Cagliostro no Shiro?",
+      q: "This film was revered on release boasting an OST and 14 minute Standing Ovation.",
+      a: "What is Belle?",
       i: "",
       ia: "",
     },
   ],
   [
     { 
-      q: "The smallest amount of incrementable data in a computer.", 
-      a: "What is a bit?", 
+      q: "Tony abbot eats this food item completely raw.", 
+      a: "What is an Onion?", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "The policy undertaken is by a government to help either increase or decrease a nation's economy by altering its tax levels and spending habits.",
-      a: "What is the Fiscal Policy?",
+      q: "This politician went to Hawaii and left Australia on fire.",
+      a: "Who is Scott Morrison",
       i: "",
       ia: "" 
     },
 
     { 
-      q: "The place is Diogenes the cynic said to have lived.", 
-      a: "What is a barrel?", 
+      q: "This politician was initially against same sex marriage.", 
+      a: "Who is Julia Gillard?", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "The adversarial system of law places two parties against each other against an impartial person or group of persons.", 
-      a: "What is the law system used in Australia?", 
+      q: "This politician had an affair with another politician leading them to leave the premier.", 
+      a: "Whos is Gladys ButterChicken?", 
       i: "", 
       ia: "" 
     },
     
     { 
-      q: "The act of maintaining a relatively stable equilibrium between physical and chemical conditions through physiological changes.", 
-      a: "What is homeostasis?", 
+      q: "This politician sniffed a woman's seat TWICE in the span of 10 minutes.", 
+      a: "Who is Troy Buswell", 
       i: "", 
       ia: "" 
     },
@@ -255,72 +255,72 @@ const questionsArray2 = [
   ],
   [
     { 
-      q: "This Australian Mountain was named after a Polish-Lithuanian freedom fighter.", 
-      a: "What is Mount Kusciuszko?", 
+      q: "The protagonist of this wizard movie series is played by Daniel Radcliffe.", 
+      a: "Who is Harry Potter?", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "This artist's real name is Marshall Bruce Mathers III.", 
-      a: "Who is Eminem?", 
+      q: "She is the oldest Kardashian sister.", 
+      a: "Who is Kourtney Kardashian?", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "This is the most abundant element of the Earth's crust.", 
-      a: "What is Oxygen",
+      q: "They were the members of One Direction(first names).", 
+      a: "Who are Nial, Liam, Harry, Louis, Zayn",
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "Plutophobia", 
-      a: "What is the fear of money?", 
+      q: "This TV series has 10 seasons and 6 protagonists", 
+      a: "What is Friends?", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "A man who stands for nothing will fall for anything.", 
-      a: "Who is Malcolm X?", 
+      q: "He lives on Drury Lane and she is married to him.", 
+      a: "Who is the Muffin Man?", 
       i: "", 
       ia: ""
     },
   ],
   [
     { 
-      q: " Bottle flip challenge", 
-      a: "The chosen tribute will have 3 bottles, Contestants will have to flip all three bottles within a minute.", 
+      q: " ", 
+      a: "What is hypers", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "O face", 
-      a: "Place an oreo on your forehead and succesfully manuevere it your mouth within a minute", 
+      q: "", 
+      a: "What is feelsWeirdMan",
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "Blow me down", 
-      a: "Using nothing but an inflated balloon knock down the whole pyramid of cups within 45 seconds", 
+      q: "", 
+      a: "WHat is coomerHands", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "Clean Up", 
-      a: "", 
+      q: "", 
+      a: "What is peepoHappy", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "Spooning", 
-      a: "Egg and Spoon race but eggs are scary so take some M&Ms and race the 10s clock", 
+      q: "", 
+      a: "What is based", 
       i: "", 
       ia: "" 
     },
@@ -328,35 +328,35 @@ const questionsArray2 = [
   [
     { 
       q: "", 
-      a: "What is the offical Pokemon Dub", 
+      a: "Crossing Fields - LiSA", 
       i: "", 
       ia: "" 
     },
 
     { 
       q: "", 
-      a: "What is the Code Geass Fan dub", 
+      a: "Fly High - Burnout Syndromes", 
       i: "", 
       ia: "" 
     },
 
     { 
       q: "", 
-      a: "What is the offical sub for Misfit at the Demon King Academy", 
+      a: "The Day by Porno Graffitti", 
       i: "", 
       ia: "" 
     },
 
     { 
       q: "", 
-      a: "What is the Fan translation for Jojo's Bizzare Adventure Part 4: Diamond is Ubreakable", 
+      a: "Again by Yui", 
       i: "", 
       ia: "" 
     },
     
     { 
       q: "", 
-      a: "What is the Oficial Sub for Skull-face Bookseller Honda-san", 
+      a: "Silhouette by Kanaboon", 
       i: "", 
       ia: "" 
     },
