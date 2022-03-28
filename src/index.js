@@ -314,7 +314,7 @@ const questionsArray2 = [
     { 
       q: "", 
       a: "What is peepoHappy", 
-      i: "peephappy.png", 
+      i: "peepohappy.png", 
       ia: "peepohappy_answer.jpg" 
     },
 
