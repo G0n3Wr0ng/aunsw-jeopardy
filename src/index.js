@@ -4,104 +4,362 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import styled from "styled-components";
 
-const categoriesArray = ["Weeb", "Emotional Damage", "cat3", "cat4", "cat5"];
+const categoriesArray = ["Weeb", "Emotional Damage", "General", "Dares", "Nipponrish"];
 const questionsArray = [
   [
     {
-      q: "The 3rd opening is Blue Bird by Ikimono Gakari",
-      a: "What is a Naruto Shippuden Opening",
+      q: "The 3rd opening is Blue Bird by Ikimono Gakari.",
+      a: "What is a Naruto Shippuden Opening?",
       i: "cute.jpg",
     },
     {
       q: "This anime series is based on the premise of summoning historical figures for a battle royale.",
-      a: " What is Fate",
+      a: " What is the Fate series?",
       i: "",
       ia: "",
     },
     {
-      q: "The fifth isekai series to join Isekai Quartet",
-      a: " What is The Rising of the Shield Hero/Tate no Yuusha no Nariagari",
+      q: "The fifth isekai series to join Isekai Quartet.",
+      a: " What is The Rising of the Shield Hero/Tate no Yuusha no Nariagari?",
       i: "",
       ia: "",
     },
     {
-      q: "This anime is infamous for repeating the same episode with minor differences eight times in a row",
-      a: "What is The Melancholy of Haruhi/Suzumiya Haruhi no Yuutsu",
+      q: "This anime is infamous for repeating the same episode with minor differences eight times in a row.",
+      a: "What is The Melancholy of Haruhi/Suzumiya Haruhi no Yuutsu?",
       i: "",
       ia: "",
     },
     {
-      q: "Hayao Miyazaki's directorial debut",
-      a: "What is Lupin III: The Castle of Cagliostro/Lupin III: Cagliostro no Shiro",
+      q: "Hayao Miyazaki's directorial debut.",
+      a: "What is Lupin III: The Castle of Cagliostro/Lupin III: Cagliostro no Shiro?",
       i: "",
       ia: "",
     },
   ],
   [
-    { q: "help", a: "me", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    { 
+      q: "The smallest amount of incrementable data in a computer.", 
+      a: "What is a bit?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "The policy undertaken is by a government to help either increase or decrease a nation's economy by altering its tax levels and spending habits.",
+      a: "What is the Fiscal Policy?",
+      i: "",
+      ia: "" 
+    },
+
+    { 
+      q: "The place is Diogenes the cynic said to have lived.", 
+      a: "What is a barrel?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "The adversarial system of law places two parties against each other against an impartial person or group of persons.", 
+      a: "What is the law system used in Australia?", 
+      i: "", 
+      ia: "" 
+    },
+    
+    { 
+      q: "The act of maintaining a relatively stable equilibrium between physical and chemical conditions through physiological changes.", 
+      a: "What is homeostasis?", 
+      i: "", 
+      ia: "" 
+    },
+
   ],
   [
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    { 
+      q: "This Australian Mountain was named after a Polish-Lithuanian freedom fighter.", 
+      a: "What is Mount Kusciuszko?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "This artist's real name is Marshall Bruce Mathers III.", 
+      a: "Who is Eminem?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "This is the most abundant element of the Earth's crust.", 
+      a: "What is Oxygen",
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "Plutophobia", 
+      a: "What is the fear of money?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "A man who stands for nothing will fall for anything.", 
+      a: "Who is Malcolm X?", 
+      i: "", 
+      ia: ""
+    },
   ],
   [
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    { 
+      q: " Bottle flip challenge", 
+      a: "The chosen tribute will have 3 bottles, Contestants will have to flip all three bottles within a minute.", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "O face", 
+      a: "Place an oreo on your forehead and succesfully manuevere it your mouth within a minute", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "Blow me down", 
+      a: "Using nothing but an inflated balloon knock down the whole pyramid of cups within 45 seconds", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "Clean Up", 
+      a: "", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "Spooning", 
+      a: "Egg and Spoon race but eggs are scary so take some M&Ms and race the 10s clock", 
+      i: "", 
+      ia: "" 
+    },
   ],
   [
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    { 
+      q: "", 
+      a: "What is the offical Pokemon Dub", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "", 
+      a: "What is the Code Geass Fan dub", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "", 
+      a: "What is the offical sub for Misfit at the Demon King Academy", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "", 
+      a: "What is the Fan translation for Jojo's Bizzare Adventure Part 4: Diamond is Ubreakable", 
+      i: "", 
+      ia: "" 
+    },
+    
+    { 
+      q: "", 
+      a: "What is the Oficial Sub for Skull-face Bookseller Honda-san", 
+      i: "", 
+      ia: "" 
+    },
   ],
 ];
-const categoriesArray2 = ["0w0", "cat2", "cat3", "cat4", "cat5"];
+const categoriesArray2 = ["Weeb", "Politicolols", "Popping", "Emotes", "Reverse Uno"];
 const questionsArray2 = [
   [
-    { q: "THIS IS QUESTION SET 2", a: "answer: UR MOM", i: "cute.jpg" },
-    { q: "help", a: "me", i: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    {
+      q: "The Studio most famous for animating Head tilts",
+      a: "Who is Studio Shaft?",
+      i: "cute.jpg",
+    },
+    {
+      q: "This man helped prevent world war 3 and has the well known alias Hououin Kyouma.",
+      a: " Who is Okabe Rintarou?",
+      i: "",
+      ia: "",
+    },
+    {
+      q: "The fifth isekai series to join Isekai Quartet.",
+      a: " What is The Rising of the Shield Hero/Tate no Yuusha no Nariagari?",
+      i: "",
+      ia: "",
+    },
+    {
+      q: "This anime is infamous for repeating the same episode with minor differences eight times in a row.",
+      a: "What is The Melancholy of Haruhi/Suzumiya Haruhi no Yuutsu?",
+      i: "",
+      ia: "",
+    },
+    {
+      q: "Hayao Miyazaki's directorial debut.",
+      a: "What is Lupin III: The Castle of Cagliostro/Lupin III: Cagliostro no Shiro?",
+      i: "",
+      ia: "",
+    },
   ],
   [
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    { 
+      q: "The smallest amount of incrementable data in a computer.", 
+      a: "What is a bit?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "The policy undertaken is by a government to help either increase or decrease a nation's economy by altering its tax levels and spending habits.",
+      a: "What is the Fiscal Policy?",
+      i: "",
+      ia: "" 
+    },
+
+    { 
+      q: "The place is Diogenes the cynic said to have lived.", 
+      a: "What is a barrel?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "The adversarial system of law places two parties against each other against an impartial person or group of persons.", 
+      a: "What is the law system used in Australia?", 
+      i: "", 
+      ia: "" 
+    },
+    
+    { 
+      q: "The act of maintaining a relatively stable equilibrium between physical and chemical conditions through physiological changes.", 
+      a: "What is homeostasis?", 
+      i: "", 
+      ia: "" 
+    },
+
   ],
   [
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    { 
+      q: "This Australian Mountain was named after a Polish-Lithuanian freedom fighter.", 
+      a: "What is Mount Kusciuszko?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "This artist's real name is Marshall Bruce Mathers III.", 
+      a: "Who is Eminem?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "This is the most abundant element of the Earth's crust.", 
+      a: "What is Oxygen",
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "Plutophobia", 
+      a: "What is the fear of money?", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "A man who stands for nothing will fall for anything.", 
+      a: "Who is Malcolm X?", 
+      i: "", 
+      ia: ""
+    },
   ],
   [
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    { 
+      q: " Bottle flip challenge", 
+      a: "The chosen tribute will have 3 bottles, Contestants will have to flip all three bottles within a minute.", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "O face", 
+      a: "Place an oreo on your forehead and succesfully manuevere it your mouth within a minute", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "Blow me down", 
+      a: "Using nothing but an inflated balloon knock down the whole pyramid of cups within 45 seconds", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "Clean Up", 
+      a: "", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "Spooning", 
+      a: "Egg and Spoon race but eggs are scary so take some M&Ms and race the 10s clock", 
+      i: "", 
+      ia: "" 
+    },
   ],
   [
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
-    { q: "", a: "", i: "", ia: "" },
+    { 
+      q: "", 
+      a: "What is the offical Pokemon Dub", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "", 
+      a: "What is the Code Geass Fan dub", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "", 
+      a: "What is the offical sub for Misfit at the Demon King Academy", 
+      i: "", 
+      ia: "" 
+    },
+
+    { 
+      q: "", 
+      a: "What is the Fan translation for Jojo's Bizzare Adventure Part 4: Diamond is Ubreakable", 
+      i: "", 
+      ia: "" 
+    },
+    
+    { 
+      q: "", 
+      a: "What is the Oficial Sub for Skull-face Bookseller Honda-san", 
+      i: "", 
+      ia: "" 
+    },
   ],
 ];
 
