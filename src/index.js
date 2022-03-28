@@ -329,7 +329,7 @@ const questionsArray2 = [
   [
     { 
       q: "",
-      m:"Crossing_Field.m4a",
+      m:"Crossing Field.m4a",
       a: "Crossing Fields - LiSA", 
       i: "", 
       ia: "" 
@@ -337,6 +337,7 @@ const questionsArray2 = [
 
     { 
       q: "", 
+      m:"Fly High.m4a",
       a: "Fly High - Burnout Syndromes", 
       i: "", 
       ia: "" 
@@ -344,6 +345,7 @@ const questionsArray2 = [
 
     { 
       q: "", 
+      m:"BNHA OP.m4a",
       a: "The Day by Porno Graffitti", 
       i: "", 
       ia: "" 
@@ -351,6 +353,7 @@ const questionsArray2 = [
 
     { 
       q: "", 
+      m:"Again.m4a",
       a: "Again by Yui", 
       i: "", 
       ia: "" 
@@ -358,23 +361,33 @@ const questionsArray2 = [
     
     { 
       q: "", 
+      m:"Silhouette.m4a",
       a: "Silhouette by Kanaboon", 
       i: "", 
       ia: "" 
     },
   ],
 ];
-
+const BlackScreen = styled.div`
+position:fixed;
+height:100%;
+width:100%;
+background-color: rgba(0,0,12,0.5);
+top:0;
+left:0;
+z-index:99;
+`
 const ContentWrap = styled.div`
   background-color: #e7b1ffff;
   position:absolute;
   border: 5px solid #a4f6ffff;
-  top: 5vw;
+  top: 3vw;
   left:15vw;
   right:15vw;
+  bottom:3vw;
   padding:20px 50px;
   box-shadow: 20px 20px aqua;
-  z-index:99;
+  overflow:auto;
 `;
 const Button = styled.div`
   user-select: none;
@@ -387,12 +400,14 @@ const ExitButton = styled(Button)`
   position: absolute;
   top: 0px;
   right: 0px;
+
   background-color: #fd3a2a;
   color: black;
   width: 50px;
   height: 50px;
 `;
 const ShowAnswer = styled(Button)`
+padding-top:10px;
   background-color: white;
   color: black;
   width: 250px;
@@ -402,11 +417,16 @@ const ShowAnswer = styled(Button)`
 `;
 const Image = styled.img`
   max-width:65vw;
+  object-fit:scale-down;
+  max-height: 50vw;
+  bottom:0px;
 `;
 const GenericWrap = styled.div`
   text-align: center;
   color: black;
   padding: 10px;
+  object-fit:contain;
+  float:center;
 `;
 const Header = styled(GenericWrap)`
   font-size: 2rem;
@@ -423,9 +443,12 @@ const Arrow = styled.div`
 
 function ShowQuestion(props) {
   return (
+    <BlackScreen>
     <ContentWrap>
       <ExitButton onClick={props.closeOnClick}> x </ExitButton>
       <Header> {props.question.q} </Header>
+      {(props.question.m !== "" &&  props.question.m  !== undefined) ? 
+          <audio controls src={props.question.m} type="audio/mpeg"> <code>audio</code> </audio>:""}
       {(props.question.i !== "" &&  props.question.i  !== undefined) ? <Image src={props.question.i} alt="" />: ""}
       <ShowAnswer onClick={props.SetAnswer}>
         
@@ -438,10 +461,9 @@ function ShowQuestion(props) {
         <br/>
         { (props.showanswer && (props.question.i !== "" &&  props.question.i  !== undefined)) ? 
           <Image src={props.question.ia} alt="" />:""}
-        {(props.showanswer && (props.question.i !== "" &&  props.question.i  !== undefined)) ? 
-          <audio src={props.question.m} type="audio/x-m4a" control autoplay />:""}
       </GenericWrap>
     </ContentWrap>
+    </BlackScreen>
   );
 }
 const Cell = styled.th`
@@ -562,6 +584,7 @@ const NavButtonWrapper = styled.div`
   padding-top: 5px;
   bottom: 0;
   background-color: #ab8dd8;
+  z-index:50;
 `;
 const NavButton = styled(Button)`
   height: 40px;
