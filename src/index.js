@@ -198,8 +198,8 @@ const questionsArray2 = [
       ia: "",
     },
     {
-      q: "The fifth isekai series to join Isekai Quartet.",
-      a: " What is The Rising of the Shield Hero/Tate no Yuusha no Nariagari?",
+      q: "The voice actor who voiced Gintoki, Joseph Joestar and Karasuma",
+      a: "Who is Tomokazu Sugita?",
       i: "",
       ia: "",
     },
