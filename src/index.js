@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 
 const categoriesArray = ["Weeb", "Emotional Damage", "General", "Dares", "Nipponrish"];
 const questionsArray = [
@@ -10,32 +10,33 @@ const questionsArray = [
     {
       q: "The 3rd opening is Blue Bird by Ikimono Gakari.",
       a: "What is a Naruto Shippuden Opening?",
-      i: "",
-      ia:"",
+      i: "bluebird.jpg",
+      ia: "",
     },
     {
       q: "This anime series is based on the premise of summoning historical figures for a battle royale.",
       a: " What is the Fate series?",
       i: "",
-      ia: "",
+      ia: "saber_party.gif",
     },
+
     {
       q: "The fifth isekai series to join Isekai Quartet.",
       a: " What is The Rising of the Shield Hero/Tate no Yuusha no Nariagari?",
       i: "",
-      ia: "",
+      ia: "raphtalia.jpg",
     },
     {
       q: "This anime is infamous for repeating the same episode with minor differences eight times in a row.",
       a: "What is The Melancholy of Haruhi/Suzumiya Haruhi no Yuutsu?",
       i: "",
-      ia: "",
+      ia: "haruhi.jpg",
     },
     {
       q: "Hayao Miyazaki's directorial debut.",
       a: "What is Lupin III: The Castle of Cagliostro/Lupin III: Cagliostro no Shiro?",
       i: "",
-      ia: "",
+      ia: "LupinIII.jpg",
     },
   ],
   [
@@ -43,13 +44,13 @@ const questionsArray = [
       q: "The smallest amount of incrementable data in a computer.", 
       a: "What is a bit?", 
       i: "", 
-      ia: "" 
+      ia: "sauce.png" 
     },
 
     { 
       q: "The policy undertaken is by a government to help either increase or decrease a nation's economy by altering its tax levels and spending habits.",
       a: "What is the Fiscal Policy?",
-      i: "",
+      i: "money.jpg",
       ia: "" 
     },
 
@@ -57,21 +58,21 @@ const questionsArray = [
       q: "The place is Diogenes the cynic said to have lived.", 
       a: "What is a barrel?", 
       i: "", 
-      ia: "" 
+      ia: "diodeeznuts.jpg" 
     },
 
     { 
       q: "The adversarial system of law places two parties against each other against an impartial person or group of persons.", 
       a: "What is the law system used in Australia?", 
       i: "", 
-      ia: "" 
+      ia: "law.png" 
     },
     
     { 
       q: "The act of maintaining a relatively stable equilibrium between physical and chemical conditions through physiological changes.", 
       a: "What is homeostasis?", 
       i: "", 
-      ia: "" 
+      ia: "surgery.jpg" 
     },
 
   ],
@@ -80,42 +81,42 @@ const questionsArray = [
       q: "This Australian Mountain was named after a Polish-Lithuanian freedom fighter.", 
       a: "What is Mount Kusciuszko?", 
       i: "", 
-      ia: "" 
+      ia: "mt.png" 
     },
 
     { 
       q: "This artist's real name is Marshall Bruce Mathers III.", 
       a: "Who is Eminem?", 
       i: "", 
-      ia: "" 
+      ia: "eminem.jpg" 
     },
 
     { 
       q: "This is the most abundant element of the Earth's crust.", 
       a: "What is Oxygen",
-      i: "", 
-      ia: "" 
+      i: "earth.jpg", 
+      ia: ""
     },
 
     { 
       q: "Plutophobia", 
       a: "What is the fear of money?", 
       i: "", 
-      ia: "" 
+      ia: "fear.png" 
     },
 
     { 
       q: "A man who stands for nothing will fall for anything.", 
       a: "Who is Malcolm X?", 
       i: "", 
-      ia: ""
+      ia: "malcome.jpg"
     },
   ],
   [
     { 
       q: " Bottle flip challenge", 
       a: "The chosen tribute will have 3 bottles, Contestants will have to flip all three bottles within a minute.", 
-      i: "", 
+      i: "water.gif", 
       ia: "" 
     },
 
@@ -123,27 +124,27 @@ const questionsArray = [
       q: "O face", 
       a: "Place an oreo on your forehead and succesfully manuevere it your mouth within a minute", 
       i: "", 
-      ia: "" 
+      ia: "o_face.jpg" 
     },
 
     { 
       q: "Blow me down", 
       a: "Using nothing but an inflated balloon knock down the whole pyramid of cups within 45 seconds", 
       i: "", 
-      ia: "" 
+      ia: "blow.gif" 
     },
 
     { 
       q: "Clean Up", 
       a: "Using your incredible succ reallocate the M&M within 2 mins", 
-      i: "", 
+      i: "succc.jpg", 
       ia: "" 
     },
 
     { 
       q: "Spooning", 
       a: "Egg and Spoon race but eggs are scary so take some M&Ms and race the 10s clock", 
-      i: "", 
+      i: "egg.jpg", 
       ia: "" 
     },
   ],
@@ -460,7 +461,7 @@ function ShowQuestion(props) {
         
         {props.showanswer ? props.question.a : ""}
         <br/>
-        { (props.showanswer && (props.question.i !== "" &&  props.question.i  !== undefined)) ? 
+        { (props.showanswer && (props.question.ia !== "" &&  props.question.ia  !== undefined)) ? 
           <Image src={props.question.ia} alt="" />:""}
       </GenericWrap>
     </ContentWrap>
