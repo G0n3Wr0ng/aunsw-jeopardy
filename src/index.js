@@ -629,7 +629,7 @@ text-align: center;
   margin: 0 auto;
 `
 const TeamWrap = styled.div`
-background-color:#3f50e9;
+background-color:#5c6ae6;
 display:inline-block;
   padding:10px 20px;
   font-size:2rem;
