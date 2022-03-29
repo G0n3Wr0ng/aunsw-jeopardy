@@ -357,7 +357,7 @@ const questionsArray2 = [
       m:"Again.m4a",
       a: "Again by Yui", 
       i: "", 
-      ia: "" 
+      ia: "fma.png" 
     },
     
     { 
@@ -365,7 +365,7 @@ const questionsArray2 = [
       m:"Silhouette.m4a",
       a: "Silhouette by Kanaboon", 
       i: "", 
-      ia: "" 
+      ia: "sasuke.jpg" 
     },
   ],
 ];
