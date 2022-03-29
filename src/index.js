@@ -333,7 +333,7 @@ const questionsArray2 = [
       m:"Crossing Field.m4a",
       a: "Crossing Fields - LiSA", 
       i: "", 
-      ia: "" 
+      ia: "sao.png" 
     },
 
     { 
@@ -341,7 +341,7 @@ const questionsArray2 = [
       m:"Fly High.m4a",
       a: "Fly High - Burnout Syndromes", 
       i: "", 
-      ia: "" 
+      ia: "oikawa.png" 
     },
 
     { 
