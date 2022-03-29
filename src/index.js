@@ -191,31 +191,31 @@ const questionsArray2 = [
     {
       q: "The Studio most famous for animating Head tilts",
       a: "Who is Studio Shaft?",
-      i: "cute.jpg",
+      i: "headtilt.gif",
     },
     {
       q: "This man helped prevent world war 3 and has the well known alias Hououin Kyouma.",
       a: " Who is Okabe Rintarou?",
       i: "",
-      ia: "",
+      ia: "okabe.gif",
     },
     {
       q: "The voice actor who voiced Gintoki, Joseph Joestar and Karasuma",
       a: "Who is Tomokazu Sugita?",
-      i: "",
+      i: "sugita.jpg",
       ia: "",
     },
     {
       q: "The director behind the films Perfect Blue and Paprika.",
       a: "Who is Satoshi Kon?",
       i: "",
-      ia: "",
+      ia: "konkon.png",
     },
     {
       q: "This film was revered on release boasting an OST and 14 minute Standing Ovation.",
       a: "What is Belle?",
       i: "",
-      ia: "",
+      ia: "belle.gif",
     },
   ],
   [
@@ -223,20 +223,20 @@ const questionsArray2 = [
       q: "Tony abbot eats this food item completely raw.", 
       a: "What is an Onion?", 
       i: "", 
-      ia: "" 
+      ia: "onion.png" 
     },
 
     { 
       q: "This politician went to Hawaii and left Australia on fire.",
       a: "Who is Scott Morrison",
-      i: "",
+      i: "aussiefire.jpg",
       ia: "" 
     },
 
     { 
       q: "This politician was initially against same sex marriage.", 
       a: "Who is Julia Gillard?", 
-      i: "", 
+      i: "rainbow.png", 
       ia: "" 
     },
 
@@ -244,13 +244,13 @@ const questionsArray2 = [
       q: "This politician had an affair with another politician leading them to leave the premier.", 
       a: "Whos is Gladys ButterChicken?", 
       i: "", 
-      ia: "" 
+      ia: "butterchicken.jpg" 
     },
     
     { 
       q: "This politician sniffed a woman's seat TWICE in the span of 10 minutes.", 
       a: "Who is Troy Buswell", 
-      i: "", 
+      i: "pikachu.png", 
       ia: "" 
     },
 
