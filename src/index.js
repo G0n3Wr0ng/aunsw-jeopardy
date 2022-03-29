@@ -372,7 +372,7 @@ const BlackScreen = styled.div`
 position:fixed;
 height:100%;
 width:100%;
-background-color: rgba(0,0,12,0.5);
+background-color: rgba(0,0,12,0.8);
 top:0;
 left:0;
 z-index:99;
@@ -380,6 +380,7 @@ z-index:99;
 const ContentWrap = styled.div`
   background-color: #e7b1ffff;
   position:absolute;
+  text-shadow:none;
   border: 5px solid #a4f6ffff;
   top: 3vw;
   left:15vw;
@@ -473,7 +474,8 @@ const Cell = styled.th`
   margin: 20px;
 `;
 const BoxWrap = styled(Cell)`
-  color: ${(props) => (props.state ? "yellow" : "black")};
+  color:${(props) => (props.state ?  "white": "darkgray")};;
+  text-shadow: 0px 0px 3px ${(props) => (props.state ?  "red": "black")};
   background: linear-gradient(
     45deg,
     ${(props) =>
@@ -618,7 +620,10 @@ const H2 = styled.div`
   text-shadow: 2px 2px 5px #ffb1e0ff;
   padding: 5px;
 `;
-
+const H99 = styled.div`
+  font-size:0.2em;
+  color: #504d66;
+`
 function Page(props) {
   const [currPage, setPage] = useState(0);
   const highestPage = 1;
@@ -678,7 +683,8 @@ function Page(props) {
           forward
         </NavButton>
       </NavButtonWrapper>{" "}
-      <SponsorButtonWrapper> This event was made possible due to Arc's Return to Campus grant</SponsorButtonWrapper>
+      <SponsorButtonWrapper> <H99>creds: @feinxcookies, @athymay, @g0n3wr0ng </H99>
+      This event was made possible due to Arc's Return to Campus grant </SponsorButtonWrapper>
     </PageWrap>
   );
 }
