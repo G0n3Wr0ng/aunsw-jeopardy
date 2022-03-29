@@ -276,9 +276,9 @@ const questionsArray2 = [
     },
 
     { 
-      q: "This TV series has 10 seasons and 6 protagonists", 
-      a: "What is Friends?", 
-      i: "", 
+      q: "Just last Sunday we witnessed the Fresh Prince punt Marty the Zebra, for making a joke about this person and this disease.", 
+      a: "Who is Jada Pinkett Smith and What is Alopecia?", 
+      i: "slap.jpg", 
       ia: "" 
     },
 
