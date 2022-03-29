@@ -106,7 +106,7 @@ const questionsArray = [
     },
 
     { 
-      q: "A man who stands for nothing will fall for anything.", 
+      q: '"A man who stands for nothing will fall for anything."', 
       a: "Who is Malcolm X?", 
       i: "", 
       ia: "malcome.jpg"
@@ -259,7 +259,7 @@ const questionsArray2 = [
     { 
       q: "The protagonist of this wizard movie series is played by Daniel Radcliffe.", 
       a: "Who is Harry Potter?", 
-      i: "", 
+      i: "akimbo.jpg", 
       ia: "" 
     },
 
@@ -267,14 +267,14 @@ const questionsArray2 = [
       q: "She is the oldest Kardashian sister.", 
       a: "Who is Kourtney Kardashian?", 
       i: "", 
-      ia: "" 
+      ia: "kkk.jpg" 
     },
 
     { 
       q: "They were the members of One Direction(first names).", 
-      a: "Who are Nial, Liam, Harry, Louis, Zayn",
+      a: "Who are Liam, Zayn, Louis, Nial, Harry",
       i: "", 
-      ia: "" 
+      ia: "one.jpg" 
     },
 
     { 
@@ -288,7 +288,7 @@ const questionsArray2 = [
       q: "He lives on Drury Lane and she is married to him.", 
       a: "Who is the Muffin Man?", 
       i: "", 
-      ia: ""
+      ia: "muffinman.jpg"
     },
   ],
   [
@@ -680,7 +680,7 @@ function Teams(props) {
   )
 }
 function Page(props) {
-  const teams = ["LOOOOONNGG","team2","team3"];
+  const teams = ["Yu are Low IQ","Tangy Cauliflower","Who Wants to be  a shillionaire"];
   const maxteams = 3;
   const [currTeam, setCurrTeam] = useState(0);
   const [currPage, setPage] = useState(0);
