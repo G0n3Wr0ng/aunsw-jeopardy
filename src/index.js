@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 const categoriesArray = ["Weeb", "Emotional Damage", "General", "Dares", "Nipponrish"];
 const questionsArray = [
@@ -10,7 +10,8 @@ const questionsArray = [
     {
       q: "The 3rd opening is Blue Bird by Ikimono Gakari.",
       a: "What is a Naruto Shippuden Opening?",
-      i: "cute.jpg",
+      i: "",
+      ia:"",
     },
     {
       q: "This anime series is based on the premise of summoning historical figures for a battle royale.",
@@ -327,7 +328,8 @@ const questionsArray2 = [
   ],
   [
     { 
-      q: "", 
+      q: "",
+      m:"Crossing Field.m4a",
       a: "Crossing Fields - LiSA", 
       i: "", 
       ia: "" 
@@ -335,6 +337,7 @@ const questionsArray2 = [
 
     { 
       q: "", 
+      m:"Fly High.m4a",
       a: "Fly High - Burnout Syndromes", 
       i: "", 
       ia: "" 
@@ -342,6 +345,7 @@ const questionsArray2 = [
 
     { 
       q: "", 
+      m:"BNHA OP.m4a",
       a: "The Day by Porno Graffitti", 
       i: "", 
       ia: "" 
@@ -349,6 +353,7 @@ const questionsArray2 = [
 
     { 
       q: "", 
+      m:"Again.m4a",
       a: "Again by Yui", 
       i: "", 
       ia: "" 
@@ -356,24 +361,34 @@ const questionsArray2 = [
     
     { 
       q: "", 
+      m:"Silhouette.m4a",
       a: "Silhouette by Kanaboon", 
       i: "", 
       ia: "" 
     },
   ],
 ];
-
+const BlackScreen = styled.div`
+position:fixed;
+height:100%;
+width:100%;
+background-color: rgba(0,0,12,0.8);
+top:0;
+left:0;
+z-index:99;
+`
 const ContentWrap = styled.div`
   background-color: #e7b1ffff;
   position:absolute;
+  text-shadow:none;
   border: 5px solid #a4f6ffff;
-  top: 5vw;
+  top: 3vw;
   left:15vw;
   right:15vw;
+  bottom:3vw;
   padding:20px 50px;
   box-shadow: 20px 20px aqua;
-  glow:
-  z-index:99;
+  overflow:auto;
 `;
 const Button = styled.div`
   user-select: none;
@@ -386,12 +401,14 @@ const ExitButton = styled(Button)`
   position: absolute;
   top: 0px;
   right: 0px;
+
   background-color: #fd3a2a;
   color: black;
   width: 50px;
   height: 50px;
 `;
 const ShowAnswer = styled(Button)`
+padding-top:10px;
   background-color: white;
   color: black;
   width: 250px;
@@ -400,13 +417,17 @@ const ShowAnswer = styled(Button)`
   margin-right: auto;
 `;
 const Image = styled.img`
-  width: 400px;
-  height: 400px;
+  max-width:65vw;
+  object-fit:scale-down;
+  max-height: 50vw;
+  bottom:0px;
 `;
 const GenericWrap = styled.div`
   text-align: center;
   color: black;
   padding: 10px;
+  object-fit:contain;
+  float:center;
 `;
 const Header = styled(GenericWrap)`
   font-size: 2rem;
@@ -423,20 +444,27 @@ const Arrow = styled.div`
 
 function ShowQuestion(props) {
   return (
+    <BlackScreen>
     <ContentWrap>
-      <ExitButton onClick={props.closeOnClick}> x </ExitButton>{" "}
-      <Header> {props.question.q} </Header> <br />{" "}
-      {props.question.i !== "" ? <Image src={props.question.i} alt="" /> : ""}{" "}
+      <ExitButton onClick={props.closeOnClick}> x </ExitButton>
+      <Header> {props.question.q} </Header>
+      {(props.question.m !== "" &&  props.question.m  !== undefined) ? 
+          <audio controls src={props.question.m} type="audio/mpeg"> <code>audio</code> </audio>:""}
+      {(props.question.i !== "" &&  props.question.i  !== undefined) ? <Image src={props.question.i} alt="" />: ""}
       <ShowAnswer onClick={props.SetAnswer}>
-        {" "}
+        
         <Arrow state={props.showanswer} />
         Answer
       </ShowAnswer>
       <GenericWrap>
-        {" "}
-        {props.showanswer ? props.question.a : ""}{" "}
-      </GenericWrap>{" "}
+        
+        {props.showanswer ? props.question.a : ""}
+        <br/>
+        { (props.showanswer && (props.question.i !== "" &&  props.question.i  !== undefined)) ? 
+          <Image src={props.question.ia} alt="" />:""}
+      </GenericWrap>
     </ContentWrap>
+    </BlackScreen>
   );
 }
 const Cell = styled.th`
@@ -446,7 +474,8 @@ const Cell = styled.th`
   margin: 20px;
 `;
 const BoxWrap = styled(Cell)`
-  color: ${(props) => (props.state ? "yellow" : "black")};
+  color:${(props) => (props.state ?  "white": "darkgray")};;
+  text-shadow: 0px 0px 3px ${(props) => (props.state ?  "red": "black")};
   background: linear-gradient(
     45deg,
     ${(props) =>
@@ -462,7 +491,7 @@ const BoxWrap = styled(Cell)`
     "#B361C0"} 50px */
 `;
 const CatWrap = styled(Cell)`
-  background-color: #ffb1e0ff;
+  background-color: #fe77c8;
   color: white;
   text-shadow: 2px 2px 5px #ca007aff;
   font-size: 1.5rem;
@@ -473,12 +502,11 @@ const FullDiv = styled.div`
 `;
 
 function Box(props) {
-  const [state, setState] = useState(true);
   const [visible, setVisible] = useState(false);
   const [answer, SetAnswer] = useState(false);
   const [hover, SetHover] = useState(false);
   return (
-    <BoxWrap state={state} hover={hover}>
+    <BoxWrap state={props.state} hover={hover}>
       <FullDiv
         onClick={() => {
           setVisible(true);
@@ -486,16 +514,16 @@ function Box(props) {
         onMouseEnter={() => SetHover(true)}
         onMouseLeave={() => SetHover(false)}
       >
-        {" "}
-        {props.value}{" "}
-      </FullDiv>{" "}
+        
+        {props.value}
+      </FullDiv>
       {visible ? (
         <ShowQuestion
           question={props.question}
           visible={visible}
           closeOnClick={() => {
             setVisible(false);
-            setState(false);
+            props.setState(false);
           }}
           SetAnswer={() => SetAnswer(!answer)}
           showanswer={answer}
@@ -506,6 +534,8 @@ function Box(props) {
     </BoxWrap>
   );
 }
+
+
 const Table = styled.table`
   background-color: black;
   margin-left: auto;
@@ -520,24 +550,26 @@ function MoneyGrid(props) {
   return (
     <Table>
       <tr>
-        {" "}
+        
         {props.cats.map((element, col) => (
           <CatWrap> {element} </CatWrap>
-        ))}{" "}
-      </tr>{" "}
+        ))}
+      </tr>
       {props.qs.map((row, rowIndex, mainArray) => (
         <tr>
-          {" "}
+          
           {row.map((element, colIndex) => (
             <Box
               value={`$${(rowIndex + 1) * 100 * props.factor}`}
               question={mainArray.at(colIndex).at(rowIndex)}
+              state = {props.state.at(colIndex).at(rowIndex)}
+              setState = {(val) => props.setState(colIndex,rowIndex,val)}
             >
-              {" "}
+              
             </Box>
-          ))}{" "}
+          ))}
         </tr>
-      ))}{" "}
+      ))}
     </Table>
   );
 }
@@ -552,16 +584,24 @@ const PageWrap = styled.div`
 const NavButtonWrapper = styled.div`
   position: absolute;
   align: center;
+  bottom: 0;
+  z-index:50;
+`;
+
+const SponsorButtonWrapper = styled.div`
+  position: absolute;
+  align: center;
   padding-right: 15px;
   padding-top: 5px;
-  bottom: 0;
-  background-color: #ab8dd8;
+  bottom: 5px;
+  right: 5px;
 `;
+
 const NavButton = styled(Button)`
-  height: 40px;
   align: center;
-  padding: 15px;
-  display: inline-block;
+  display: inline;
+  padding: 5px 15px 0px 15px;
+  background-color: #ab8dd8;
   &:hover {
     background-color: #b06bc5;
   }
@@ -580,33 +620,71 @@ const H2 = styled.div`
   text-shadow: 2px 2px 5px #ffb1e0ff;
   padding: 5px;
 `;
-
+const H99 = styled.div`
+  font-size:0.2em;
+  color: #504d66;
+`
 function Page(props) {
   const [currPage, setPage] = useState(0);
   const highestPage = 1;
   const cats = [categoriesArray, categoriesArray2];
   const qs = [questionsArray, questionsArray2];
   const factors = [1, 2];
+  const array = questionsArray.map((row, rowIndex, mainArray) => {
+    return row.map((element, colIndex) => {
+      return true;
+    })
+  })
+  const array2 = questionsArray2.map((row, rowIndex, mainArray) => {
+    return row.map((element, colIndex) => {
+      return true;
+    })
+  })
+
+
+
+  const [state, setArray] = useState(array);
+  const [state2, setArray2] = useState(array2);
+  const setState = (col,row, val) => {
+    setArray(arr => Array.from(arr, (currRow,colIndex) => {
+      return Array.from(currRow, (e, rowIndex) => {
+        return ((colIndex === col && rowIndex === row) ? val : arr.at(colIndex).at(rowIndex))
+      })
+    }))
+  }
+  const setState2 = (col,row, val) => {
+    setArray2(arr => Array.from(arr, (currRow,colIndex) => {
+      return Array.from(currRow, (e, rowIndex) => {
+        return ((colIndex === col && rowIndex === row) ? val : arr.at(colIndex).at(rowIndex))
+      })
+    }))
+  }
+  const states = [state,state2];
+  const setStates = [setState, setState2];
   return (
     <PageWrap>
-      <H1> Aibou Arena </H1>{" "}
+      <H1> Aibou Arena </H1> 
+      <H2> Board: {currPage + 1} </H2>{" "}
       <MoneyGrid
         cats={cats.at(currPage)}
         qs={qs.at(currPage)}
         factor={factors.at(currPage)}
-      />{" "}
+        state = {states.at(currPage)}
+        setState = {setStates.at(currPage)}
+      />
       <br />
       <NavButtonWrapper>
         <NavButton onClick={() => setPage(Math.max(currPage - 1, 0))}>
-          {" "}
-          previous{" "}
-        </NavButton>{" "}
-        <NavButton onClick={() => setPage(Math.min(currPage + 1, highestPage))}>
-          {" "}
-          forward{" "}
+          
+          previous
         </NavButton>
-        page: {currPage}{" "}
+        <NavButton onClick={() => setPage(Math.min(currPage + 1, highestPage))}>
+          
+          forward
+        </NavButton>
       </NavButtonWrapper>{" "}
+      <SponsorButtonWrapper> <H99>creds: @feinxcookies, @athymay, @g0n3wr0ng </H99>
+      This event was made possible due to Arc's Return to Campus grant </SponsorButtonWrapper>
     </PageWrap>
   );
 }
