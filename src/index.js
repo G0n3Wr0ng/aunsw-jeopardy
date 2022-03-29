@@ -341,7 +341,7 @@ const questionsArray2 = [
       m:"Fly High.m4a",
       a: "Fly High - Burnout Syndromes", 
       i: "", 
-      ia: "oikawa.png" 
+      ia: "oikawa.jpg" 
     },
 
     { 
@@ -349,7 +349,7 @@ const questionsArray2 = [
       m:"BNHA OP.m4a",
       a: "The Day by Porno Graffitti", 
       i: "", 
-      ia: "" 
+      ia: "bhna.jpg" 
     },
 
     { 
