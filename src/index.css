@@ -8,7 +8,9 @@ body {
     background-color: #2a2836;
     font-family: 'Comfortaa', cursive;
 }
-
+html {
+    font-size: 100%;
+}
 #root {
     top: 0;
     position: absolute;

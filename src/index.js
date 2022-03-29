@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import styled, {keyframes} from "styled-components";
@@ -460,7 +460,7 @@ function ShowQuestion(props) {
         
         {props.showanswer ? props.question.a : ""}
         <br/>
-        { (props.showanswer && (props.question.i !== "" &&  props.question.i  !== undefined)) ? 
+        { (props.showanswer && (props.question.ia !== "" &&  props.question.ia  !== undefined)) ? 
           <Image src={props.question.ia} alt="" />:""}
       </GenericWrap>
     </ContentWrap>
@@ -524,6 +524,7 @@ function Box(props) {
           closeOnClick={() => {
             setVisible(false);
             props.setState(false);
+            SetAnswer(false);
           }}
           SetAnswer={() => SetAnswer(!answer)}
           showanswer={answer}
@@ -576,25 +577,22 @@ function MoneyGrid(props) {
 
 const PageWrap = styled.div`
   width: 100vw;
-  height: 100vh;
   margin: 0;
   top: 0;
   position: absolute;
 `;
 const NavButtonWrapper = styled.div`
   position: absolute;
-  align: center;
-  bottom: 0;
+  bottom: 0px;
   z-index:50;
 `;
 
 const SponsorButtonWrapper = styled.div`
-  position: absolute;
-  align: center;
-  padding-right: 15px;
+  position: static;
+  margin-right: 15px;
   padding-top: 5px;
-  bottom: 5px;
-  right: 5px;
+  top: 5px;
+  float:right;
 `;
 
 const NavButton = styled(Button)`
@@ -624,27 +622,80 @@ const H99 = styled.div`
   font-size:0.2em;
   color: #504d66;
 `
+const TeamsWrap = styled.div`
+display: flex;
+justify-content:center;
+text-align: center;
+  margin: 0 auto;
+`
+const TeamWrap = styled.div`
+background-color:#3f50e9;
+display:inline-block;
+  padding:10px 20px;
+  font-size:2rem;
+`
+const InputWrap = styled.div`
+  background-color: rgba(255,255,255,0.1);
+  display:inline-flex;
+  border:none;
+  padding:5px;
+  font-size:2rem;
+  width: 6rem;
+  position:relative;
+  text-align:left;
+`
+const HalfArrow = styled(Button)`
+  height:50%;
+  position: absolute;
+  padding:0px 5px;
+  right:0;
+  ${props=>props.direction}:0;
+  font-size:1.5rem;
+  :hover{
+    background-color: rgba(255,255,255,0.2);
+  }
+`
+
+function Input (props) {
+  const [value, setValue] = useState(0);
+  return (
+    
+    <InputWrap> 
+      {value}
+      <HalfArrow onClick = {()=> setValue(value + 100)} direction = "top" contentEditable="false">+</HalfArrow>
+      <HalfArrow onClick = {()=> setValue(value - 100)} direction = "bottom" contentEditable="false">-</HalfArrow>
+    </InputWrap>
+    
+  )
+}
+function Teams(props) {
+
+  return (
+    <TeamsWrap>
+      {props.teams.map((team, index) => {
+        return (<TeamWrap>{team}: <Input/></TeamWrap>)
+      })}
+    </TeamsWrap>
+  )
+}
 function Page(props) {
+  const teams = ["LOOOOONNGG","team2","team3"];
+  const maxteams = 3;
+  const [currTeam, setCurrTeam] = useState(0);
   const [currPage, setPage] = useState(0);
   const highestPage = 1;
   const cats = [categoriesArray, categoriesArray2];
   const qs = [questionsArray, questionsArray2];
   const factors = [1, 2];
-  const array = questionsArray.map((row, rowIndex, mainArray) => {
-    return row.map((element, colIndex) => {
-      return true;
+  const arrays = qs.map((qArray) => {
+    return qArray.map((row, rowIndex, mainArray) => {
+      return row.map((element, colIndex) => {
+        return true;
+      })
     })
-  })
-  const array2 = questionsArray2.map((row, rowIndex, mainArray) => {
-    return row.map((element, colIndex) => {
-      return true;
-    })
-  })
-
-
-
-  const [state, setArray] = useState(array);
-  const [state2, setArray2] = useState(array2);
+  });
+  const [state, setArray] = useState(arrays.at(0));
+  const [state2, setArray2] = useState(arrays.at(1));
   const setState = (col,row, val) => {
     setArray(arr => Array.from(arr, (currRow,colIndex) => {
       return Array.from(currRow, (e, rowIndex) => {
@@ -665,6 +716,10 @@ function Page(props) {
     <PageWrap>
       <H1> Aibou Arena </H1> 
       <H2> Board: {currPage + 1} </H2>{" "}
+      <Teams currTeam = {currTeam} 
+      changeTeam = {()=> setCurrTeam((currTeam + 1) % maxteams)}
+      teams = {teams}
+      />
       <MoneyGrid
         cats={cats.at(currPage)}
         qs={qs.at(currPage)}
@@ -672,7 +727,10 @@ function Page(props) {
         state = {states.at(currPage)}
         setState = {setStates.at(currPage)}
       />
-      <br />
+
+      <SponsorButtonWrapper> <H99>creds: @feinxcookies, @athymay, @g0n3wr0ng </H99>
+      This event was made possible due to Arc's Return to Campus grant </SponsorButtonWrapper>
+
       <NavButtonWrapper>
         <NavButton onClick={() => setPage(Math.max(currPage - 1, 0))}>
           
@@ -682,9 +740,7 @@ function Page(props) {
           
           forward
         </NavButton>
-      </NavButtonWrapper>{" "}
-      <SponsorButtonWrapper> <H99>creds: @feinxcookies, @athymay, @g0n3wr0ng </H99>
-      This event was made possible due to Arc's Return to Campus grant </SponsorButtonWrapper>
+      </NavButtonWrapper>
     </PageWrap>
   );
 }
