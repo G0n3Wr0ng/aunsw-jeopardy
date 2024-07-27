@@ -680,8 +680,8 @@ function Teams(props) {
   )
 }
 function Page(props) {
-  const teams = ["Yu are Low IQ","Tangy Cauliflower","Who Wants to be  a shillionaire"];
-  const maxteams = 3;
+  const teams = ["Team 1","Team 2","Team 3", "Team 4"];
+  const maxteams = 4;
   const [currTeam, setCurrTeam] = useState(0);
   const [currPage, setPage] = useState(0);
   const highestPage = 1;
@@ -715,7 +715,7 @@ function Page(props) {
   const setStates = [setState, setState2];
   return (
     <PageWrap>
-      <H1> Aibou Arena </H1> 
+      <H1> AUNSW not Jeopardy </H1> 
       <H2> Board: {currPage + 1} </H2>{" "}
       <Teams currTeam = {currTeam} 
       changeTeam = {()=> setCurrTeam((currTeam + 1) % maxteams)}
