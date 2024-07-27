@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, useRef, useEffect} from "react";
+import { useState } from "react";
+                //,useRef, useEffect}
 import ReactDOM from "react-dom";
 import "./index.css";
 import styled from "styled-components";
@@ -680,8 +681,8 @@ function Teams(props) {
   )
 }
 function Page(props) {
-  const teams = ["Team 1","Team 2","Team 3", "Team 4"];
-  const maxteams = 4;
+  const teams = ["Team 1","Team 2","Team 3"];
+  const maxteams = 3;
   const [currTeam, setCurrTeam] = useState(0);
   const [currPage, setPage] = useState(0);
   const highestPage = 1;
