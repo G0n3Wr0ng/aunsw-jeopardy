@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import styled from "styled-components";
 
-const categoriesArray = ["Weeb", "Emotional Damage", "General", "Dares", "Nipponrish"];
+const categoriesArray = ["Weeb", "Emotional Damage", "General", "Before and After", "Nipponrish"];
 const questionsArray = [
   [
     {
