@@ -1,372 +1,373 @@
 import React from "react";
-import { useState } from "react";
-                //,useRef, useEffect}
+import { useState, useRef, useEffect} from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import styled from "styled-components";
 
-const categoriesArray = ["Weeb", "Emotional Damage", "General", "Before and After", "Nipponrish"];
+const categoriesArray = ["Blast From the Past", "Name the Seiyuu", "#general", "[   ]", "Where in the world"];
 const questionsArray = [
-  [
+  [// Category 1
     {
-      q: "The 3rd opening is Blue Bird by Ikimono Gakari.",
-      a: "What is a Naruto Shippuden Opening?",
-      i: "bluebird.jpg",
+      q: "Ryuk's favourite fruit, He's always seen eating them",
+      a: "What are Red Apples",
+      i: "",
+      ia: "apple.png",
+    },
+    {
+      q: " Naruto’s iconic word that is largely known to not be a real Japanese word",
+      a: " What is DATTEBAYO",
+      i: "",
+      ia: "dd.jpg",
+    },
+
+    {
+      q: "The first duelist that Yugi faced off in the Duelist kingdom arc",
+      a: " Who is Weevil Underwood",
+      i: "",
+      ia: "draw.webp",
+    },
+    {
+      q: "The first Pokemon to grace our TV screens after the opening credits plays in the original TV Anime",
+      a: "Who is Gengar and Nidorino",
+      i: "",
+      ia: "genger.png",
+    },
+    {
+      q: "In Vampire Knight, This is Zero's main weapon to spite his foes",
+      a: "What is the Bloody Rose",
+      i: "gun.webp",
       ia: "",
     },
-    {
-      q: "This anime series is based on the premise of summoning historical figures for a battle royale.",
-      a: " What is the Fate series?",
-      i: "",
-      ia: "saber_party.gif",
-    },
-
-    {
-      q: "The fifth isekai series to join Isekai Quartet.",
-      a: " What is The Rising of the Shield Hero/Tate no Yuusha no Nariagari?",
-      i: "",
-      ia: "raphtalia.jpg",
-    },
-    {
-      q: "This anime is infamous for repeating the same episode with minor differences eight times in a row.",
-      a: "What is The Melancholy of Haruhi/Suzumiya Haruhi no Yuutsu?",
-      i: "",
-      ia: "haruhi.jpg",
-    },
-    {
-      q: "Hayao Miyazaki's directorial debut.",
-      a: "What is Lupin III: The Castle of Cagliostro/Lupin III: Cagliostro no Shiro?",
-      i: "",
-      ia: "LupinIII.jpg",
-    },
   ],
-  [
+  [// Category 2
     { 
-      q: "The smallest amount of incrementable data in a computer.", 
-      a: "What is a bit?", 
+      q: "This man came from his humble beginings making CD Audio Drama but now is most known for playing Kento Nanami", 
+      a: "Who is Kenjiro Tsuda", 
       i: "", 
-      ia: "sauce.png" 
+      ia: "daddy.webp" 
     },
 
     { 
-      q: "The policy undertaken is by a government to help either increase or decrease a nation's economy by altering its tax levels and spending habits.",
-      a: "What is the Fiscal Policy?",
-      i: "money.jpg",
+      q: "This english voice actor is known for voicing Gojo Satoru, Jinshi and Osamu Dazai ",
+      a: "Who is Kaiji Tang",
+      i: "helost.jpeg",
+      ia: "tang.jpg" 
+    },
+
+    { 
+      q: "The place is The voice actor who voiced Gintoki, Joseph Joestar and Karasuma", 
+      a: "Who is Tomokazu Sugita", 
+      i: "", 
+      ia: "tomo.webp" 
+    },
+
+    { 
+      q: "Uchida Maaya lends her voice for this character in Bocchi the Rock", 
+      a: "Who is Seika Ijichi", 
+      i: "maayaa.jpeg", 
+      ia: "iji.jpeg" 
+    },
+    
+    { 
+      q: "The Japanese voice actor for Jean (AOT) and Chuuya (BSD)", 
+      a: "Who is Kishō Taniyama", 
+      i: "jj.webp", 
+      ia: "ki.jpg" 
+    },
+
+  ],
+  [// Category 3
+    { 
+      q: "T", 
+      a: "W", 
+      i: "", 
       ia: "" 
     },
 
     { 
-      q: "The place is Diogenes the cynic said to have lived.", 
-      a: "What is a barrel?", 
+      q: "T.", 
+      a: "Who ", 
       i: "", 
-      ia: "diodeeznuts.jpg" 
-    },
-
-    { 
-      q: "The adversarial system of law places two parties against each other against an impartial person or group of persons.", 
-      a: "What is the law system used in Australia?", 
-      i: "", 
-      ia: "law.png" 
-    },
+      ia: ""
     
-    { 
-      q: "The act of maintaining a relatively stable equilibrium between physical and chemical conditions through physiological changes.", 
-      a: "What is homeostasis?", 
-      i: "", 
-      ia: "surgery.jpg" 
-    },
+    }, 
 
-  ],
-  [
     { 
-      q: "This Australian Mountain was named after a Polish-Lithuanian freedom fighter.", 
-      a: "What is Mount Kusciuszko?", 
+      q: "This is the only Studio Ghibli movie to win an Oscar", 
+      a: "What is Spirited Away",
       i: "", 
-      ia: "mt.png" 
+      ia: "noface.webp"
     },
 
     { 
-      q: "This artist's real name is Marshall Bruce Mathers III.", 
-      a: "Who is Eminem?", 
+      q: "P", 
+      a: "W", 
       i: "", 
-      ia: "eminem.jpg" 
+      ia: "" 
     },
 
     { 
-      q: "This is the most abundant element of the Earth's crust.", 
-      a: "What is Oxygen",
-      i: "earth.jpg", 
+      q: '""', 
+      a: "W", 
+      i: "", 
       ia: ""
     },
-
-    { 
-      q: "Plutophobia", 
-      a: "What is the fear of money?", 
-      i: "", 
-      ia: "fear.png" 
-    },
-
-    { 
-      q: '"A man who stands for nothing will fall for anything."', 
-      a: "Who is Malcolm X?", 
-      i: "", 
-      ia: "malcome.jpg"
-    },
   ],
-  [
+  [// Category 4
     { 
-      q: " Bottle flip challenge", 
-      a: "The chosen tribute will have 3 bottles, Contestants will have to flip all three bottles within a minute.", 
-      i: "water.gif", 
+      q: "I wanna be the very best Like no one ever was to____", 
+      a: "To catch them is my real test To train them is my cause", 
+      i: "A_Horribly_Drawn_Pikachu.webp", 
       ia: "" 
     },
 
     { 
-      q: "O face", 
-      a: "Place an oreo on your forehead and succesfully manuevere it your mouth within a minute", 
-      i: "", 
-      ia: "o_face.jpg" 
-    },
-
-    { 
-      q: "Blow me down", 
-      a: "Using nothing but an inflated balloon knock down the whole pyramid of cups within 45 seconds", 
-      i: "", 
-      ia: "blow.gif" 
-    },
-
-    { 
-      q: "Clean Up", 
-      a: "Using your incredible succ reallocate the M&M within 2 mins", 
-      i: "succc.jpg", 
+      q: "This is ___ ___ rush!", 
+      a: "This is Japanese lunchtime rush", 
+      i: "Japnese.png", 
       ia: "" 
     },
 
     { 
-      q: "Spooning", 
-      a: "Egg and Spoon race but eggs are scary so take some M&Ms and race the 10s clock", 
-      i: "egg.jpg", 
+      q: "I’ll ___ ___ potato __… ___ ___ ___!", 
+      a: "I’ll take a potato chip… and eat it", 
+      i: "deaf.jfif", 
+      ia: "" 
+    },
+
+    { 
+      q: "Hawk, ___, awaken", 
+      a: "Hawk, eggplant, awaken", 
+      i: "huaktwua.jpg", 
+      ia: "" 
+    },
+
+    { 
+      q: "I am the Bone of my Sword. ___ ___ ___ ___ ___ ___ ___ ___ ___ blood.", 
+      a: "I am the Bone of my Sword. Steel is my body and fire is my blood", 
+      i: "boner.jpg", 
       ia: "" 
     },
   ],
-  [
+  [// Category 5
     { 
       q: "", 
-      a: "What is the offical Pokemon Dub", 
-      i: "Brock_question.jpg", 
-      ia: "Brock_answer.jpg.jpg" 
+      a: "What is Your Name", 
+      i: "irl_yourname.png", 
+      ia: "anime_yourname.png" 
     },
 
     { 
       q: "", 
-      a: "What is the Code Geass Fan dub", 
-      i: "CodeGeass_question.jpg", 
-      ia: "CodeGeass_answer.jpg" 
+      a: "What is Steins;Gate", 
+      i: "irl_steinsgate.png", 
+      ia: "anime_steinsgate.png" 
     },
 
     { 
       q: "", 
-      a: "What is the offical sub for Misfit at the Demon King Academy", 
-      i: "MaouSama_question.jpg", 
-      ia: "MaouSama_Answer.jpg" 
+      a: "What is Hibiki! Euphonium/ Sound! Euphonium ", 
+      i: "irl_eupho.png", 
+      ia: "anime_eupho.png" 
     },
 
     { 
       q: "", 
-      a: "What is the Fan translation for Jojo's Bizzare Adventure Part 4: Diamond is Ubreakable", 
-      i: "duwaang_question.jpg", 
-      ia: "duwaang_answer.jpg" 
+      a: "What is Yuru Camp", 
+      i: "irl_yurucamp.png", 
+      ia: "anime_yurucamp.png" 
     },
     
     { 
       q: "", 
-      a: "What is the Oficial Sub for Skull-face Bookseller Honda-san", 
-      i: "HondaSan_question.jpg", 
-      ia: "HondaSan_answer.jpg" 
+      a: "What is Eromanga Sensei", 
+      i: "irl_eromanga.png", 
+      ia: "anime_eromanga.png" 
     },
   ],
+  
 ];
-const categoriesArray2 = ["Weeb", "Politicolols", "Popping", "Emotes", "Reverse Uno"];
+const categoriesArray2 = ["Renews Quarterly", "Bait Bait Bait", "Batter Up", "Poorly Described", "Reverse Uno"];
 const questionsArray2 = [
-  [
+  [// Category 1
     {
-      q: "The Studio most famous for animating Head tilts",
-      a: "Who is Studio Shaft?",
-      i: "headtilt.gif",
+      q: "nunn, nunn nunn, You Deer",
+      a: "What is Shikanoko nokonoko Koshitantan/My Deer friend Nokotan",
+      ia: "shika.jpg",
     },
     {
-      q: "This man helped prevent world war 3 and has the well known alias Hououin Kyouma.",
-      a: " Who is Okabe Rintarou?",
+      q: "Who am I? I've never fallen in love with anyone before now. Until she became my stepsister.",
+      a: " Who is Asamura Yuta?",
       i: "",
-      ia: "okabe.gif",
+      ia: "o.jpg",
     },
     {
-      q: "The voice actor who voiced Gintoki, Joseph Joestar and Karasuma",
-      a: "Who is Tomokazu Sugita?",
-      i: "sugita.jpg",
+      q: "I looked up to the genius child actor who could cry in 5 seconds ever since I was a child",
+      a: "Who is Kurokawa Akane?",
+      i: "",
+      ia: "as.avif",
+    },
+    {
+      q: "Ngl I forgot what Alya's full name was…",
+      a: "Who is Alisa Mikhailovna Kujou",
+      i: "Webp.webp",
       ia: "",
     },
     {
-      q: "The director behind the films Perfect Blue and Paprika.",
-      a: "Who is Satoshi Kon?",
-      i: "",
-      ia: "konkon.png",
-    },
-    {
-      q: "This film was revered on release boasting an OST and 14 minute Standing Ovation.",
-      a: "What is Belle?",
-      i: "",
-      ia: "belle.gif",
+      q: "Once wielded by the prophet Sid and now wielded by the soldier Kai. The sword to alter the course of reality.",
+      a: "What is Code Holder",
+      i: "was.jpg",
+      ia: "",
     },
   ],
-  [
+  [// Category 2
     { 
-      q: "Tony abbot eats this food item completely raw.", 
-      a: "What is an Onion?", 
-      i: "", 
-      ia: "onion.png" 
-    },
-
-    { 
-      q: "This politician went to Hawaii and left Australia on fire.",
-      a: "Who is Scott Morrison",
-      i: "aussiefire.jpg",
+      q: "You Win", 
+      a: "Good Job :D", 
+      i: "yippe.jpg", 
       ia: "" 
     },
 
     { 
-      q: "This politician was initially against same sex marriage.", 
-      a: "Who is Julia Gillard?", 
-      i: "rainbow.png", 
+      q: "You Win again",
+      a: "Just kidding Lose 400 points",
+      i: "",
+      ia: "doom.png" 
+    },
+
+    { 
+      q: "Think of a number bigger than I am", 
+      a: "What is 5", 
+      i: "numbers.gif", 
       ia: "" 
     },
 
     { 
-      q: "This politician had an affair with another politician leading them to leave the premier.", 
-      a: "Whos is Gladys ButterChicken?", 
-      i: "", 
-      ia: "butterchicken.jpg" 
+      q: "Trade Offer", 
+      a: "What can you offer me for the points", 
+      i: "trade.gif", 
+      ia: "" 
     },
     
     { 
-      q: "This politician sniffed a woman's seat TWICE in the span of 10 minutes.", 
-      a: "Who is Troy Buswell", 
-      i: "pikachu.png", 
+      q: "The correct thing to say after this (think)", 
+      a: "What is say 'u no'", 
+      i: "uno.png", 
       ia: "" 
     },
 
   ],
-  [
+  [// Category 3
     { 
-      q: "The protagonist of this wizard movie series is played by Daniel Radcliffe.", 
-      a: "Who is Harry Potter?", 
-      i: "akimbo.jpg", 
+      q: "This anime has a protagonist named ‘Eijun Sawamura’", 
+      a: "What is Ace of the Diamond/Diamond no Ace?", 
+      i: "moo.jpg",
       ia: "" 
     },
 
     { 
-      q: "She is the oldest Kardashian sister.", 
-      a: "Who is Kourtney Kardashian?", 
+      q: "The anime has the objective of creating the best striker in the world.", 
+      a: "What is Blue Lock", 
       i: "", 
-      ia: "kkk.jpg" 
+      ia: "eyes.jpg" 
     },
 
     { 
-      q: "They were the members of One Direction(first names).", 
-      a: "Who are Liam, Zayn, Louis, Nial, Harry",
-      i: "", 
-      ia: "one.jpg" 
-    },
-
-    { 
-      q: "Just last Sunday we witnessed the Fresh Prince punt Marty the Zebra, for making a joke about this person and this disease.", 
-      a: "Who is Jada Pinkett Smith and What is Alopecia?", 
-      i: "slap.jpg", 
+      q: "This sport has had the most animes made about it.", 
+      a: "What is Baseball.",
+      i: "bust.webp", 
       ia: "" 
     },
 
     { 
-      q: "He lives on Drury Lane and she is married to him.", 
-      a: "Who is the Muffin Man?", 
+      q: "This person is known as the ‘Little giant’ and the inspiration for Hinata in Haikyuu", 
+      a: "Who is Tenma Udai", 
+      i: "Little_giant.webp", 
+      ia: "" 
+    },
+
+    { 
+      q: "This person is the captain of the Iwatobi High School Swim Club", 
+      a: "Who Makoto Tachibana", 
       i: "", 
-      ia: "muffinman.jpg"
+      ia: "fre.avif"
     },
   ],
-  [
+  [// Category 4
     { 
-      q: " ", 
-      a: "What is hypers", 
-      i: "hypers.png", 
-      ia: "" 
+      q: "Man punches and wins", 
+      a: "What is One Punch Man", 
+      i: "", 
+      ia: "notjojo.webp" 
     },
 
     { 
-      q: "", 
-      a: "What is feelsWeirdMan",
-      i: "feelsWeirdMan.png", 
-      ia: "" 
+      q: "Gamer games too hard and becomes bone master", 
+      a: "What is Overlord",
+      i: "", 
+      ia: "overman.gif" 
     },
 
     { 
-      q: "", 
-      a: "WHat is coomerHands", 
-      i: "coomerhands.png", 
-      ia: "" 
+      q: "Girl searches for her missing mother, ends up playing baseball in a land far far away", 
+      a: "What is A Place Further Than the Universe", 
+      i: "", 
+      ia: "base.jpg" 
     },
 
     { 
-      q: "", 
-      a: "What is peepoHappy", 
-      i: "peepohappy.png", 
-      ia: "peepohappy_answer.jpg" 
+      q: "Author gets caught for tax evasion, anime takes 6 years for 3rd season to release", 
+      a: "What is Log Horizon", 
+      i: "", 
+      ia: "nue.jpg" 
     },
 
     { 
-      q: "", 
-      a: "What is based", 
-      i: "based.png", 
-      ia: "based_answer.png" 
+      q: "A Child with immense trauma and troubled family circumstances goes on a daunting journey with unlikely allies to tasked with the immense goal to kill them all", 
+      a: "What is Ao no exorcist/Blue Exorcist", 
+      i: "", 
+      ia: "blux.webp" 
     },
   ],
-  [
+  [// Category 5
     { 
       q: "",
-      m:"Crossing Field.m4a",
-      a: "Crossing Fields - LiSA", 
+      m:"aprilreverse.wav",
+      a: "What is Hikaru Nara by Goose House", 
       i: "", 
-      ia: "sao.png" 
+      ia: "yila.jpg" 
     },
 
     { 
       q: "", 
-      m:"Fly High.m4a",
-      a: "Fly High - Burnout Syndromes", 
+      m:"saoreverse.wav",
+      a: "What is Crossing Fields by LiSA", 
       i: "", 
-      ia: "oikawa.jpg" 
+      ia: "aso.jpg" 
     },
 
     { 
       q: "", 
-      m:"BNHA OP.m4a",
-      a: "The Day by Porno Graffitti", 
+      m:"idolreverse.wav",
+      a: "What is Idol by YOASOBI", 
       i: "", 
-      ia: "bhna.jpg" 
+      ia: "mmmai.jpg" 
     },
 
     { 
       q: "", 
-      m:"Again.m4a",
-      a: "Again by Yui", 
+      m:"bocchireverse.wav",
+      a: "What is Seishun Complex by Kesouku Band", 
       i: "", 
-      ia: "fma.png" 
+      ia: "anime_bocchi2.png" 
     },
     
     { 
       q: "", 
-      m:"Silhouette.m4a",
-      a: "Silhouette by Kanaboon", 
+      m:"evareverse.wav",
+      a: "Cruel Angel's Thesis by Yoko Takahashi", 
       i: "", 
-      ia: "sasuke.jpg" 
+      ia: "asskabig.png" 
     },
   ],
 ];
@@ -608,7 +609,7 @@ const NavButton = styled(Button)`
 `;
 const H1 = styled.div`
   font-size: 3rem;
-  font-family: "Pacifico", cursive;
+  font-family: "Pacifico";
   text-align: center;
   text-shadow: 2px 2px 5px #ffb1e0ff;
   padding: 5px;
@@ -681,8 +682,8 @@ function Teams(props) {
   )
 }
 function Page(props) {
-  const teams = ["Team 1","Team 2","Team 3"];
-  const maxteams = 3;
+  const teams = ["Quizz Buddies+","4 Piece","Team 3","Team 4"];
+  const maxteams = 4;
   const [currTeam, setCurrTeam] = useState(0);
   const [currPage, setPage] = useState(0);
   const highestPage = 1;
@@ -716,7 +717,7 @@ function Page(props) {
   const setStates = [setState, setState2];
   return (
     <PageWrap>
-      <H1> AUNSW not Jeopardy </H1> 
+      <H1> AUNSW Jeopardy </H1> 
       <H2> Board: {currPage + 1} </H2>{" "}
       <Teams currTeam = {currTeam} 
       changeTeam = {()=> setCurrTeam((currTeam + 1) % maxteams)}
@@ -731,7 +732,7 @@ function Page(props) {
       />
 
       <SponsorButtonWrapper> <H99>creds: @feinxcookies, @athymay, @g0n3wr0ng </H99>
-      This event was made possible due to Arc's Return to Campus grant </SponsorButtonWrapper>
+      This event was sponsored by ARC Clubs and MANGAMATE </SponsorButtonWrapper>
 
       <NavButtonWrapper>
         <NavButton onClick={() => setPage(Math.max(currPage - 1, 0))}>
