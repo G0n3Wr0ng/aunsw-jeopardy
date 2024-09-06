@@ -78,37 +78,37 @@ const questionsArray = [
   ],
   [// Category 3
     { 
-      q: "T", 
-      a: "W", 
+      q: "This country borders the United Kingdom", 
+      a: "What is Ireland", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: "T.", 
-      a: "Who ", 
+      q: "Amazon's first product type they sold", 
+      a: "What is books ", 
       i: "", 
       ia: ""
     
     }, 
 
     { 
-      q: "This is the only Studio Ghibli movie to win an Oscar", 
-      a: "What is Spirited Away",
+      q: "This is country is home the tallest building on Earth", 
+      a: "What is Unites Arab Emrates",
       i: "", 
       ia: "noface.webp"
     },
 
     { 
-      q: "P", 
-      a: "W", 
+      q: "This planet is the only one in our soalr system that spins the opposite way due to being flipped on its axis", 
+      a: "What is Venus", 
       i: "", 
       ia: "" 
     },
 
     { 
-      q: '""', 
-      a: "W", 
+      q: '"Go on, This is the name of the current chancelor of UNSW"', 
+      a: "Who is David Gonski", 
       i: "", 
       ia: ""
     },
