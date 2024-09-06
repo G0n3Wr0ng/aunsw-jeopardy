@@ -81,13 +81,13 @@ const questionsArray = [
       q: "This country borders the United Kingdom", 
       a: "What is Ireland", 
       i: "", 
-      ia: "" 
+      ia: "Lmao_rekit.png" 
     },
 
     { 
       q: "Amazon's first product type they sold", 
       a: "What is books ", 
-      i: "", 
+      i: "amazing.jpg", 
       ia: ""
     
     }, 
@@ -96,20 +96,20 @@ const questionsArray = [
       q: "This is country is home the tallest building on Earth", 
       a: "What is Unites Arab Emrates",
       i: "", 
-      ia: "noface.webp"
+      ia: "bae.jpeg"
     },
 
     { 
       q: "This planet is the only one in our soalr system that spins the opposite way due to being flipped on its axis", 
       a: "What is Venus", 
       i: "", 
-      ia: "" 
+      ia: "venussy.png" 
     },
 
     { 
       q: '"Go on, This is the name of the current chancelor of UNSW"', 
       a: "Who is David Gonski", 
-      i: "", 
+      i: "who.avif", 
       ia: ""
     },
   ],
@@ -682,7 +682,7 @@ function Teams(props) {
   )
 }
 function Page(props) {
-  const teams = ["Quizz Buddies+","4 Piece","Team 3","Team 4"];
+  const teams = ["Quizz Buddies+","4 Piece","Shake the scarameow","Team 4"];
   const maxteams = 4;
   const [currTeam, setCurrTeam] = useState(0);
   const [currPage, setPage] = useState(0);
