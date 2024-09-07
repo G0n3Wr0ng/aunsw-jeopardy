@@ -30,7 +30,7 @@ const questionsArray = [
       q: "The first Pokemon to grace our TV screens after the opening credits plays in the original TV Anime",
       a: "Who is Gengar and Nidorino",
       i: "",
-      ia: "genger.png",
+      ia: "gigga.png",
     },
     {
       q: "In Vampire Knight, This is Zero's main weapon to spite his foes",
@@ -46,6 +46,13 @@ const questionsArray = [
       i: "", 
       ia: "daddy.webp" 
     },
+    
+    { 
+      q: "The voice actor who voiced Gintoki, Joseph Joestar and Karasuma", 
+      a: "Who is Tomokazu Sugita", 
+      i: "", 
+      ia: "tomo.webp" 
+    },
 
     { 
       q: "This english voice actor is known for voicing Gojo Satoru, Jinshi and Osamu Dazai ",
@@ -55,23 +62,16 @@ const questionsArray = [
     },
 
     { 
-      q: "The place is The voice actor who voiced Gintoki, Joseph Joestar and Karasuma", 
-      a: "Who is Tomokazu Sugita", 
-      i: "", 
-      ia: "tomo.webp" 
-    },
-
-    { 
       q: "Uchida Maaya lends her voice for this character in Bocchi the Rock", 
       a: "Who is Seika Ijichi", 
-      i: "maayaa.jpeg", 
+      i: "Maaya.jpg", 
       ia: "iji.jpeg" 
     },
     
     { 
       q: "The Japanese voice actor for Jean (AOT) and Chuuya (BSD)", 
       a: "Who is Kishō Taniyama", 
-      i: "jj.webp", 
+      i: "jjj.png", 
       ia: "ki.jpg" 
     },
 
@@ -100,7 +100,7 @@ const questionsArray = [
     },
 
     { 
-      q: "This planet is the only one in our soalr system that spins the opposite way due to being flipped on its axis", 
+      q: "This planet is the only one in our solar system that spins the opposite way due to being flipped on its axis", 
       a: "What is Venus", 
       i: "", 
       ia: "venussy.png" 
@@ -196,14 +196,14 @@ const questionsArray2 = [
       ia: "shika.jpg",
     },
     {
-      q: "Who am I? I've never fallen in love with anyone before now. Until she became my stepsister.",
-      a: " Who is Asamura Yuta?",
+      q: "Who am I? I've never fallen in love with anyone before now. Until he became my step-brother.",
+      a: " Who is Saki Ayase",
       i: "",
-      ia: "o.jpg",
+      ia: "maidbitch.webp",
     },
     {
       q: "I looked up to the genius child actor who could cry in 5 seconds ever since I was a child",
-      a: "Who is Kurokawa Akane?",
+      a: "Who is Akane Kurokawa?",
       i: "",
       ia: "as.avif",
     },
@@ -232,7 +232,7 @@ const questionsArray2 = [
       q: "You Win again",
       a: "Just kidding Lose 400 points",
       i: "",
-      ia: "doom.png" 
+      ia: "nocon.jpg" 
     },
 
     { 
@@ -252,24 +252,25 @@ const questionsArray2 = [
     { 
       q: "The correct thing to say after this (think)", 
       a: "What is say 'u no'", 
-      i: "uno.png", 
+      i: "nou.png", 
       ia: "" 
     },
 
   ],
   [// Category 3
     { 
-      q: "This anime has a protagonist named ‘Eijun Sawamura’", 
-      a: "What is Ace of the Diamond/Diamond no Ace?", 
-      i: "moo.jpg",
-      ia: "" 
-    },
-
-    { 
       q: "The anime has the objective of creating the best striker in the world.", 
       a: "What is Blue Lock", 
       i: "", 
       ia: "eyes.jpg" 
+    },
+
+
+    { 
+      q: "This anime has a protagonist named ‘Eijun Sawamura’", 
+      a: "What is Ace of the Diamond/Diamond no Ace?", 
+      i: "moo.jpg",
+      ia: "" 
     },
 
     { 
@@ -309,7 +310,7 @@ const questionsArray2 = [
     },
 
     { 
-      q: "Girl searches for her missing mother, ends up playing baseball in a land far far away", 
+      q: "Girl searches for her missing mother, ends up playing baseball at the bottom of the Earth", 
       a: "What is A Place Further Than the Universe", 
       i: "", 
       ia: "base.jpg" 
@@ -353,14 +354,6 @@ const questionsArray2 = [
       i: "", 
       ia: "mmmai.jpg" 
     },
-
-    { 
-      q: "", 
-      m:"bocchireverse.wav",
-      a: "What is Seishun Complex by Kesouku Band", 
-      i: "", 
-      ia: "anime_bocchi2.png" 
-    },
     
     { 
       q: "", 
@@ -368,6 +361,14 @@ const questionsArray2 = [
       a: "Cruel Angel's Thesis by Yoko Takahashi", 
       i: "", 
       ia: "asskabig.png" 
+    },
+
+    { 
+      q: "", 
+      m:"bocchireverse.wav",
+      a: "What is Seishun Complex by Kesouku Band", 
+      i: "", 
+      ia: "anime_bocchi2.png" 
     },
   ],
 ];
