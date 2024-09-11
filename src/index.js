@@ -317,7 +317,7 @@ const questionsArray2 = [
     },
 
     { 
-      q: "Author gets caught for tax evasion, anime takes 6 years for 3rd season to release", 
+      q: "Daily Double:                       Author gets caught for tax evasion, anime takes 6 years for 3rd season to release", 
       a: "What is Log Horizon", 
       i: "", 
       ia: "nue.jpg" 
@@ -683,7 +683,7 @@ function Teams(props) {
   )
 }
 function Page(props) {
-  const teams = ["Quizz Buddies+","4 Piece","Shake the scarameow","Team 4"];
+  const teams = ["Quizz Buddies+","4 Piece","Shake the Scarameow","Raygunn"];
   const maxteams = 4;
   const [currTeam, setCurrTeam] = useState(0);
   const [currPage, setPage] = useState(0);
