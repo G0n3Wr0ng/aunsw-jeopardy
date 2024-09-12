@@ -107,7 +107,7 @@ const questionsArray = [
     },
 
     { 
-      q: '"Go on, This is the name of the current chancelor of UNSW"', 
+      q: 'DAILY DOUBLE:    "Go on, This is the name of the current chancelor of UNSW"', 
       a: "Who is David Gonski", 
       i: "who.avif", 
       ia: ""
